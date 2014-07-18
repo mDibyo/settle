@@ -1,10 +1,13 @@
 package graph;
 
+import java.util.Date;
+
 public class Transaction {
 
 	protected Person from;
 	protected Person to;
 	protected float amount; // This is only in dollars (currently)
+	protected Date timestamp;
 	
 	/**
 	 * Create a transaction between two persons
@@ -16,6 +19,28 @@ public class Transaction {
 		this.from = from;
 		this.to = to;
 		this.amount = amount;
+		this.timestamp = new Date();
+	}
+	
+	/**
+	 * Returns whether two Transactions refer to the same event
+	 * @param that the other Transaction being compared
+	 * @return true if the transactions refer to the same event,
+	 * 		false otherwise
+	 */
+	@Override
+	public boolean equals(Object other) {
+		if (other instanceof Transaction) {
+			Transaction that = (Transaction) other;
+			if (this.timestamp.equals(that.timestamp)) {
+				if (this.to.equals(that.to) && this.from.equals(this.from)) {
+					if (this.amount == that.amount) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
 	}
 	
 }
