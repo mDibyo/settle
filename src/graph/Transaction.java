@@ -23,6 +23,19 @@ public class Transaction {
 	}
 	
 	/**
+	 * Returns the transaction in human-readable form
+	 * @return String representation of this Transaction
+	 */
+	@Override
+	public String toString() {
+		String str = this.timestamp.toString() + ": ";
+		str += this.from;
+		str += "=[" + String.format("%.2f", this.amount) + "]=>";
+		str += this.to;
+		return str;
+	}
+	
+	/**
 	 * Returns whether two Transactions refer to the same event
 	 * @param that the other Transaction being compared
 	 * @return true if the transactions refer to the same event,

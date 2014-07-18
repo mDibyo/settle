@@ -30,6 +30,15 @@ public class Person {
 	}
 	
 	/**
+	 * Returns a string representation of the Person
+	 * @return userId of a person
+	 */
+	@Override
+	public String toString() {
+		return this.userId;
+	}
+	
+	/**
 	 * Set first name of person
 	 * @param firstName The first name of the person
 	 */
