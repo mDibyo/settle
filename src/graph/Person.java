@@ -25,7 +25,7 @@ public class Person {
 	 * @param password The password entered by the user
 	 * @return whether the authentication succeeded
 	 */
-	boolean isUser(String password) {
+	protected boolean isUser(String password) {
 		return this.password.equals(password);
 	}
 	
@@ -42,7 +42,7 @@ public class Person {
 	 * Set first name of person
 	 * @param firstName The first name of the person
 	 */
-	void setFirstName(String firstName) {
+	protected void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 	
@@ -50,7 +50,7 @@ public class Person {
 	 * Set last name of person
 	 * @param lastName The last name of the person
 	 */
-	void setLastName(String lastName) {
+	protected void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 	
@@ -58,7 +58,7 @@ public class Person {
 	 * Set email of person
 	 * @param email The email of person
 	 */
-	void setEmail(String email) {
+	protected void setEmail(String email) {
 		this.email = email;
 	}
 	
@@ -68,7 +68,7 @@ public class Person {
 	 * @param newPassword The new password of person
 	 * @return Whether the operation succeeded
 	 */
-	boolean setPassword(String oldPassword, String newPassword) {
+	protected boolean setPassword(String oldPassword, String newPassword) {
 		if (this.password.equals(oldPassword)) {
 			this.password = newPassword;
 			return true;
