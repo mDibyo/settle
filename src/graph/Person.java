@@ -14,7 +14,7 @@ public class Person {
 	 * @param password The password of the person
 	 * @param email The email address of the person
 	 */
-	public Person(String userId, String password, String email) {
+	protected Person(String userId, String password, String email) {
 		this.userId = userId;
 		this.password = password;
 		this.email = email;
